@@ -3,9 +3,10 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 
 const navigation = [
-  { name: 'Dashboard', path:'/', current: true },
+  { name: 'Dashboard', path:'/home', current: false },
   { name: 'Projects', path: '/projects', current: false },
   { name: 'Product',path:'/product' ,current: false },
+  { name: 'User',path:'/' ,current: true },
 ]
 
 function classNames(...classes) {
