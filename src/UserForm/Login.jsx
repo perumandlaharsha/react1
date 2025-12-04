@@ -1,6 +1,29 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
+  let navigate=useNavigate();
+  const [valid,setValid]=useState({
+    email:"",
+    password:"",
+  });
+  const handleChange=(e)=>{
+   let {name,value}=e.target;
+   setValid({...valid,
+    [name]:value,
+   })
+  }
+
+  const checkData=(e)=>{
+    e.preventDefault()
+    let checkd=JSON.parse(localStorage.getItem("user"))
+    if(valid.email === checkd.email && checkd.password === valid.password)
+    {
+      navigate('/home');
+    }
+  }
+
+  
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100 px-6 py-12">
       
@@ -11,7 +34,7 @@ export default function Login() {
           Enter your credentials to continue
         </p>
 
-        <form className="space-y-6 mt-8">
+        <form className="space-y-6 mt-8" onSubmit={checkData}>
 
           {/* Email */}
           <div>
@@ -19,8 +42,10 @@ export default function Login() {
               Email Address
             </label>
             <input
-              id="email"
               type="email"
+              name="email"
+              value={valid.email}
+              onChange={handleChange}
               required
               className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-50 px-3 py-2 
                          text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -33,8 +58,10 @@ export default function Login() {
               Password
             </label>
             <input
-              id="password"
               type="password"
+              name="password"
+              value={valid.password}
+              onChange={handleChange}
               required
               className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-50 px-3 py-2 
                          text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -44,6 +71,7 @@ export default function Login() {
           {/* Login Button */}
           <button
             type="submit"
+          
             className="w-full py-2 rounded-md bg-indigo-600 text-white text-sm font-semibold 
                        hover:bg-indigo-500 transition duration-200"
           >

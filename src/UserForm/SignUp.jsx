@@ -19,6 +19,7 @@ export default function SignUp() {
       ...formData,
       [name]: value,
     });
+    localStorage.setItem("user",JSON.stringify(formData));
   };
 
   const regexValidate = () => {
