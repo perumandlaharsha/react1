@@ -14,13 +14,14 @@ export default function SignUp() {
   const [errMessage, setErrMessage] = useState("");
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-    localStorage.setItem("user",JSON.stringify(formData));
-  };
+  const { name, value } = e.target;
+
+  const updatedData = { ...formData, [name]: value };
+  setFormData(updatedData);
+
+  localStorage.setItem("user", JSON.stringify(updatedData));
+};
+
 
   const regexValidate = () => {
     if (!regexConditions.namePattern.test(formData.name)) {
@@ -42,13 +43,14 @@ export default function SignUp() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (regexValidate) {
-      setTimeout(()=>{
-        navigate('/product')
-      },1000)
-    }
-  };
+  e.preventDefault();
+  if (regexValidate()) {
+    setTimeout(() => {
+      navigate("/product");
+    }, 1000);
+  }
+};
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">

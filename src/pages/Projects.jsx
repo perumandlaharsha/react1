@@ -1,7 +1,6 @@
-export const Projects = () => {
-    return(
-        <>
-            <h1 className="text-3xl">This is Projects Page</h1>
-        </>
-    )
+// Projects.jsx
+import React from "react";
+
+export default function Projects() {
+  return <div>Projects Page</div>;
 }
