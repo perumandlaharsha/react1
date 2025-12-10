@@ -51,7 +51,8 @@ const ProductsList = () => {
     <div className="p-6 bg-gray-100 min-h-screen">
 
       {/* Search + Filter */}
-      <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
+  
+      <div className="flex flex-col md:flex-row items-center gap-4 mb-6 mt-10">
         <input
           type="text"
           placeholder="Search products..."
@@ -80,6 +81,7 @@ const ProductsList = () => {
           ))}
         </select>
       </div>
+  
 
       {/* Product Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

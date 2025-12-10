@@ -6,6 +6,8 @@ import SignUp from "../UserForm/SignUp";
 import Login from "../UserForm/Login";
 import ProductsList from "../Products/ProductsList";
 import ProductsData from "../Products/ProductsData";
+import { UserData } from "../UserData/userData";
+
 
 export default function AppRouter() {
   return (
@@ -15,8 +17,7 @@ export default function AppRouter() {
       <Route path="/product" element={<ProductsList />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<Login />} />
-
-      {/* FIXED ROUTE */}
+      <Route path="/users" element={<UserData />}/>
       <Route path="/product/:id" element={<ProductsData />} />
     </Routes>
   );
