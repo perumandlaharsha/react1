@@ -2,6 +2,10 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Banner } from "../Banner/Banner";
+
+
+
 
 const ProductsList = () => {
   let [dataProducts, setDataProducts] = useState([]);
@@ -47,7 +51,9 @@ const ProductsList = () => {
 
   let viewBtn = Math.ceil(productButtons / perPage);
 
-  return (
+  return(
+    <>
+    <Banner />
     <div className="p-6 bg-gray-100 min-h-screen">
 
       {/* Search + Filter */}
@@ -125,6 +131,7 @@ const ProductsList = () => {
           ))}
       </div>
     </div>
+    </>
   );
 };
 

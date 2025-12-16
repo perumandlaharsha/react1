@@ -7,6 +7,7 @@ import Login from "../UserForm/Login";
 import ProductsList from "../Products/ProductsList";
 import ProductsData from "../Products/ProductsData";
 import { UserData } from "../UserData/userData";
+import { Cart } from "../pages/Cart";
 
 
 export default function AppRouter() {
@@ -19,6 +20,7 @@ export default function AppRouter() {
       <Route path="/login" element={<Login />} />
       <Route path="/users" element={<UserData />}/>
       <Route path="/product/:id" element={<ProductsData />} />
+      <Route path="/cart" element={<Cart />} />
     </Routes>
   );
 }

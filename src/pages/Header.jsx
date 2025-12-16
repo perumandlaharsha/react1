@@ -18,6 +18,7 @@ const navigation = [
   { name: "Projects", path: "/projects", current: false },
   { name: "Product", path: "/product", current: false },
   { name: "Users", path: "/users", current: false },
+  { name: "Cart", path: "/cart", current: false },
   { name: "Form", path: "/", current: true },
 ];
 

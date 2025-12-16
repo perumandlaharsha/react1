@@ -5,5 +5,6 @@ import Login from "../UserForm/Login";
 
 export default function UserLogin() {
   const [entry, setEntry] = useState(false);
-  return <> {entry ? <SignUp /> : <Login />}</>;
+  return <>
+   {entry ? <SignUp /> : <Login />}</>;
 }
