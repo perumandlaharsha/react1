@@ -4,7 +4,7 @@ import Product from "../pages/Product";
 import UserLogin from "../components/UserLogin";
 import SignUp from "../UserForm/SignUp";
 import Login from "../UserForm/Login";
-import ProductsList from "../Products/ProductsList";
+// import ProductsList from "../Products/ProductsList";
 import ProductsData from "../Products/ProductsData";
 import { UserData } from "../UserData/userData";
 import { Cart } from "../pages/Cart";
@@ -15,7 +15,7 @@ export default function AppRouter() {
     <Routes>
       <Route path="/" element={<UserLogin />} />
       <Route path="/projects" element={<Projects />} />
-      <Route path="/product" element={<ProductsList />} />
+      <Route path="/product" element={<Product />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<Login />} />
       <Route path="/users" element={<UserData />}/>

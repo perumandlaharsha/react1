@@ -1,7 +1,11 @@
-// Product.jsx
-import { Banner } from "../Banner/Banner";
 import ProductsList from "../Products/ProductsList";
+import { CardAPI } from "../redux/Cards/cardAPI";
 
 export default function Product() {
-  return <ProductsList />;
+  return (
+    <>
+      {/* <CardAPI /> */}
+      <ProductsList />
+    </>
+  )
 }

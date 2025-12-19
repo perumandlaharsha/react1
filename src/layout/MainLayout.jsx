@@ -3,7 +3,7 @@ import Header from '../pages/Header'
 import AppRouter from '../routerDOM/AppRouter'
 import Footer from '../pages/Footer'
 import { useLocation } from 'react-router-dom'
-import { Banner } from '../Banner/Banner'
+// import { Banner } from '../Banner/Banner'
 
 
 
